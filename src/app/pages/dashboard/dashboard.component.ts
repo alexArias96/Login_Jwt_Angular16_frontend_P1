@@ -10,7 +10,6 @@ import { User } from 'src/app/Services/auth/user';
 export class DashboardComponent implements OnInit{
 
   userLoginOn:boolean=false;
-  userData?:User;
 
   constructor(private loginService:LoginService){}
 
@@ -20,12 +19,6 @@ export class DashboardComponent implements OnInit{
           this.userLoginOn=userLoginOn;
         }
       });
-
-      this.loginService.currentUserData.subscribe({
-        next:(userData) =>{
-          this.userData = userData;
-        }
-      })
   }
 
 }
