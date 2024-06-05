@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit{
   loginError:string='';
 
   loginForm = this.formBuilder.group({
-    email:['prueba1@gmail.com', [Validators.required, Validators.email]],
+    username:['', [Validators.required, Validators.email]],
     password:['', Validators.required]
   })
 
@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit{
   }
 
   get email(){
-    return this.loginForm.controls.email;
+    return this.loginForm.controls.username;
   }
 
   get password(){

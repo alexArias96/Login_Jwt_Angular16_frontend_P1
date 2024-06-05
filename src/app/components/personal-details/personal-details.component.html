@@ -5,4 +5,58 @@
     <p><b> Contact: </b> {{user?.contact}}</p>
     <p><b> Address: </b> {{user?.address}}</p>
     <p><b> Username: </b> {{user?.username}}</p>
+    <button *ngIf="userLoginOn && !editMode" (click)="editMode=true"  class="btn btn-dark"><img
+        src="https://cdn.icon-icons.com/icons2/1572/PNG/96/3592815-compose-create-edit-edit-file-office-pencil-writing_107734.png"
+        width="8%" alt="editar" />Edit personal data</button>
 </div>
+
+<form *ngIf="userLoginOn && editMode" [formGroup]="registerForm" >
+    <div class="form-group row">
+        <label for="inputFirstName" class="col-sm-1 col-form-label">Firstname</label>
+        <div class="col-sm-11">
+            <input type="text" formControlName="firstname" class="form-control" id="inputFirstName">
+            
+            <div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)" class="text-danger">
+                <div *ngIf="firstname.errors?.['required']">
+                    The field firstname is required.
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <label for="inputLasttName" class="col-sm-1 col-form-label">Surname</label>
+        <div class="col-sm-11">
+            <input type="text" formControlName="surname" class="form-control" id="inputLasttName">
+            <div *ngIf="surname.invalid && (surname.dirty || surname.touched)" class="text-danger">
+                <div *ngIf="surname.errors?.['required']">
+                    The field surname is required.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputContact" class="col-sm-1 col-form-label">Contact</label>
+        <div class="col-sm-11">
+            <input type="text" formControlName="contact" class="form-control" id="inputContact" >
+            <div *ngIf="contact.invalid && (contact.dirty || contact.touched)" class="text-danger">
+                <div *ngIf="contact.errors?.['required']">
+                    The field contact is required.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputAddress" class="col-sm-1 col-form-label">Address</label>
+        <div class="col-sm-11">
+            <input type="text" formControlName="address" class="form-control" id="inputAddress" >
+            <div *ngIf="address.invalid && (address.dirty || address.touched)" class="text-danger">
+                <div *ngIf="address.errors?.['required']">
+                    The field address is required.
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="submit" (click)="savePersonalDetailsData()" class="btn btn-dark mt-3">Guardar</button>
+    <a class="btn btn-danger mt-3" (click)="editMode=false">Cancelar</a>
+</form>
