@@ -2,8 +2,46 @@
 <p *ngIf="!userLoginOn" >Unauthenticated User</p>
 <p *ngIf="userLoginOn" >User Authenticated</p>
 
-<div *ngIf="userLoginOn">
-    <p>Name: {{userData?.name}}</p>
-    <p>Last Name: {{userData?.lastName}}</p>
-    <p>Email: {{userData?.email}}</p>
+<!-- <div *ngIf="userLoginOn">
+    <p><b> Firstname: </b> {{userData?.firstname}} </p>
+    <p><b> Lastname: </b> {{userData?.surname}}</p>
+    <p><b> Contact: </b> {{userData?.contact}}</p>
+    <p><b> Address: </b> {{userData?.address}}</p>
+    <p><b> Username: </b> {{userData?.username}}</p>
+</div> -->
+
+<div class="card ">
+    <div class="card-header">
+        Datos Personales
+    </div>
+    <div class="card-body m-0">
+        <app-personal-details></app-personal-details>
+    </div>
+
+</div>
+<div class="card">
+    <div class="card-header">
+        Perfil Profesional
+    </div>
+    <div class="card-body m-0">
+
+    </div>
+</div>
+<div class="card">
+    <div class="card-header">
+        Datos Académicos
+    </div>
+    <div class="card-body m-0">
+
+    </div>
+
+</div>
+
+<div class="card">
+    <div class="card-header">
+        Experiencia Laboral
+    </div>
+    <div class="card-body m-0">
+
+    </div>
 </div>

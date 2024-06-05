@@ -11,7 +11,7 @@ export class LoginService {
 
   //Instancias de behaviorSubject
   currentUserLoginOn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  currentUserData: BehaviorSubject<User> = new BehaviorSubject<User>({id:0, email:''});
+  currentUserData: BehaviorSubject<User> = new BehaviorSubject<User>({id:0, username:''});
 
 
   constructor(private http:HttpClient) { }
